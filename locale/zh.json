@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Hook 与通知",
+    "description": "监听 DSH 审批、提问、任务与工具生命周期 Hook，支持应用内弹窗、OS 系统通知、Windows 任务栏闪烁、自定义 WAV 铃声、跨平台脚本与 11 种三方通知渠道。"
+  }
+}

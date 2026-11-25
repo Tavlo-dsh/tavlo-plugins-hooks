@@ -1,0 +1,1369 @@
+/* Scoped styles for @tavlo-dsh/dsh-plugin-hooks. No global resets or preflight. */
+.tavlo-hooks-root {
+  --th-bg: var(--dsw-alias-bg-layer-1, light-dark(#ffffff, #20232a));
+  --th-bg-2: var(--dsw-alias-bg-layer-2, light-dark(#f6f8fb, #262a33));
+  --th-bg-3: var(--dsw-alias-bg-layer-3, light-dark(#eef2f7, #1b1e25));
+  --th-ink: var(--dsw-alias-label-primary, light-dark(#152032, #eef2f8));
+  --th-muted: var(--dsw-alias-label-secondary, light-dark(#526277, #a8b4c7));
+  --th-subtle: var(--dsw-alias-label-tertiary, light-dark(#6d7d92, #8693a7));
+  --th-border: var(--dsw-alias-border-l2, light-dark(#e1e7ef, #353c49));
+  --th-border-strong: var(--dsw-alias-border-l3, light-dark(#cbd5e1, #495264));
+  --th-brand: var(--dsw-alias-brand-primary, light-dark(#2563eb, #60a5fa));
+  --th-brand-fg: var(--dsw-alias-label-primary-foreground, #ffffff);
+  --th-brand-soft: var(--dsw-alias-state-business-tertiary, light-dark(#ebf3ff, #1f3352));
+  --th-success: var(--dsw-alias-state-success-primary, light-dark(#15803d, #4ade80));
+  --th-success-soft: var(--dsw-alias-state-success-tertiary, light-dark(#eafaf0, #163324));
+  --th-warn: var(--dsw-alias-state-warn-primary, light-dark(#b45309, #fbbf24));
+  --th-warn-soft: var(--dsw-alias-state-warn-tertiary, light-dark(#fff7e6, #3b2d15));
+  --th-error: var(--dsw-alias-state-error-primary, light-dark(#dc2626, #f87171));
+  --th-error-soft: light-dark(#fef2f2, #3d1c22);
+  --th-hover: var(--dsw-alias-interactive-bg-hover, light-dark(rgba(15, 23, 42, 0.045), rgba(255, 255, 255, 0.06)));
+  --th-radius-sm: var(--dsw-radius-sm, 8px);
+  --th-radius-md: var(--dsw-radius-md, 12px);
+  --th-radius-lg: var(--dsw-radius-lg, 16px);
+
+  color-scheme: light dark;
+  container: tavlo-hooks / inline-size;
+  display: grid;
+  gap: 14px;
+  max-width: 820px;
+  color: var(--th-ink);
+  font-size: 13px;
+  line-height: 1.5;
+  min-width: 0;
+}
+
+body[data-ds-dark-theme] .tavlo-hooks-root,
+body[data-ds-dark-theme] .tavlo-hooks-toast-stack,
+body[data-ds-dark-theme] .tavlo-hooks-modal-backdrop {
+  color-scheme: dark;
+}
+
+.tavlo-hooks-root *,
+.tavlo-hooks-root *::before,
+.tavlo-hooks-root *::after,
+.tavlo-hooks-toast-stack *,
+.tavlo-hooks-modal-backdrop * {
+  box-sizing: border-box;
+}
+
+.tavlo-hooks-root h2,
+.tavlo-hooks-root h3,
+.tavlo-hooks-root h4,
+.tavlo-hooks-root p {
+  margin: 0;
+}
+
+.tavlo-hooks-page-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 2px 0 4px;
+}
+
+.tavlo-hooks-page-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.tavlo-hooks-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--th-radius-md);
+  background: var(--th-brand-soft);
+  color: var(--th-brand);
+  flex: none;
+}
+
+.tavlo-hooks-page-title {
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  color: var(--th-ink);
+}
+
+.tavlo-hooks-page-subtitle {
+  font-size: 12.5px;
+  color: var(--th-muted);
+  margin-top: 2px;
+}
+
+.tavlo-hooks-page-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tavlo-hooks-stat-pills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tavlo-hooks-sections {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+}
+
+.tavlo-hooks-card {
+  border: 1px solid var(--th-border);
+  border-radius: var(--th-radius-lg);
+  background: var(--th-bg);
+  overflow: hidden;
+  min-width: 0;
+}
+
+.tavlo-hooks-card-header,
+.tavlo-hooks-card-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--th-bg);
+  border: 0;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+}
+
+.tavlo-hooks-card-header {
+  cursor: pointer;
+}
+
+.tavlo-hooks-card-header:hover {
+  background: var(--th-hover);
+}
+
+.tavlo-hooks-card-header-bar {
+  flex-wrap: wrap;
+}
+
+.tavlo-hooks-card-header-btn {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  flex: 1 1 220px;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.tavlo-hooks-card-header-left {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+}
+
+.tavlo-hooks-card-titles {
+  min-width: 0;
+}
+
+.tavlo-hooks-card-titles h3 {
+  font-size: 15px;
+  font-weight: 650;
+  color: var(--th-ink);
+}
+
+.tavlo-hooks-card-titles p {
+  font-size: 12px;
+  color: var(--th-muted);
+  margin-top: 2px;
+}
+
+.tavlo-hooks-header-tools {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tavlo-hooks-chevron {
+  display: inline-flex;
+  color: var(--th-muted);
+  flex: none;
+}
+
+.tavlo-hooks-card-body {
+  display: grid;
+  gap: 14px;
+  padding: 4px 16px 16px;
+  border-top: 1px solid var(--th-border);
+  padding-top: 14px;
+}
+
+.tavlo-hooks-setting-block {
+  display: grid;
+  gap: 10px;
+}
+
+.tavlo-hooks-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.tavlo-hooks-row-text {
+  flex: 1 1 240px;
+  min-width: 0;
+}
+
+.tavlo-hooks-row-with-icon {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.tavlo-hooks-row-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--th-ink);
+}
+
+.tavlo-hooks-row-title-sm {
+  font-size: 13px;
+  font-weight: 550;
+  color: var(--th-ink);
+}
+
+.tavlo-hooks-helper {
+  font-size: 12px;
+  color: var(--th-muted);
+  line-height: 1.5;
+  margin-top: 2px;
+}
+
+.tavlo-hooks-row-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+  flex-wrap: wrap;
+}
+
+.tavlo-hooks-subpanel {
+  display: grid;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--th-border);
+  border-radius: var(--th-radius-md);
+  background: var(--th-bg-2);
+}
+
+.tavlo-hooks-taskbar-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.tavlo-hooks-inline-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tavlo-hooks-divider {
+  border: 0;
+  border-top: 1px solid var(--th-border);
+  margin: 0;
+}
+
+.tavlo-hooks-icon-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: var(--th-bg-3);
+  color: var(--th-muted);
+  flex: none;
+}
+
+.tavlo-hooks-icon-chip.is-blue {
+  background: var(--th-brand-soft);
+  color: var(--th-brand);
+}
+
+.tavlo-hooks-title-with-pills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tavlo-hooks-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.tavlo-hooks-badge-muted {
+  background: var(--th-bg-3);
+  color: var(--th-muted);
+}
+
+.tavlo-hooks-badge-blue {
+  background: var(--th-brand-soft);
+  color: var(--th-brand);
+}
+
+.tavlo-hooks-badge-success {
+  background: var(--th-success-soft);
+  color: var(--th-success);
+}
+
+.tavlo-hooks-badge-warn {
+  background: var(--th-warn-soft);
+  color: var(--th-warn);
+}
+
+.tavlo-hooks-badge-error {
+  background: var(--th-error-soft);
+  color: var(--th-error);
+}
+
+.tavlo-hooks-badge-mono {
+  background: var(--th-bg-3);
+  color: var(--th-muted);
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.tavlo-hooks-code-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 7px;
+  border-radius: 6px;
+  border: 1px solid var(--th-border);
+  background: var(--th-bg-2);
+  color: var(--th-ink);
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 11.5px;
+  word-break: break-all;
+}
+
+.tavlo-hooks-count-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--th-brand-soft);
+  color: var(--th-brand);
+  font-size: 11px;
+  font-weight: 650;
+}
+
+/* Switch */
+.tavlo-hooks-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 38px;
+  height: 22px;
+  padding: 2px;
+  border: 1px solid var(--th-border-strong);
+  border-radius: 999px;
+  background: var(--th-bg-3);
+  cursor: pointer;
+  flex: none;
+  transition: background-color 140ms ease, border-color 140ms ease;
+}
+
+.tavlo-hooks-switch.is-compact {
+  width: 34px;
+  height: 20px;
+}
+
+.tavlo-hooks-switch[data-checked="true"] {
+  background: var(--th-brand);
+  border-color: var(--th-brand);
+}
+
+.tavlo-hooks-switch:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.tavlo-hooks-switch-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
+  transform: translateX(0);
+  transition: transform 140ms ease;
+}
+
+.tavlo-hooks-switch.is-compact .tavlo-hooks-switch-thumb {
+  width: 14px;
+  height: 14px;
+}
+
+.tavlo-hooks-switch[data-checked="true"] .tavlo-hooks-switch-thumb {
+  transform: translateX(16px);
+}
+
+.tavlo-hooks-switch.is-compact[data-checked="true"] .tavlo-hooks-switch-thumb {
+  transform: translateX(14px);
+}
+
+/* Buttons */
+.tavlo-hooks-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 32px;
+  padding: 5px 12px;
+  border: 1px solid var(--th-border-strong);
+  border-radius: var(--th-radius-sm);
+  background: var(--th-bg);
+  color: var(--th-ink);
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 550;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tavlo-hooks-btn:hover:not(:disabled) {
+  background: var(--th-hover);
+}
+
+.tavlo-hooks-btn.is-active {
+  background: var(--th-brand-soft);
+  border-color: var(--th-brand);
+  color: var(--th-brand);
+}
+
+.tavlo-hooks-btn-sm {
+  min-height: 29px;
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+.tavlo-hooks-btn-xs {
+  min-height: 26px;
+  padding: 2px 8px;
+  font-size: 11.5px;
+}
+
+.tavlo-hooks-btn-primary {
+  background: var(--th-brand);
+  border-color: var(--th-brand);
+  color: var(--th-brand-fg);
+}
+
+.tavlo-hooks-btn-primary:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--th-brand) 88%, #000);
+}
+
+.tavlo-hooks-btn:disabled {
+  opacity: 0.52;
+  cursor: not-allowed;
+}
+
+.tavlo-hooks-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--th-radius-sm);
+  background: transparent;
+  color: var(--th-muted);
+  cursor: pointer;
+  flex: none;
+}
+
+.tavlo-hooks-icon-btn:hover:not(:disabled) {
+  background: var(--th-hover);
+  color: var(--th-ink);
+}
+
+.tavlo-hooks-icon-btn-danger:hover:not(:disabled) {
+  background: var(--th-error-soft);
+  color: var(--th-error);
+}
+
+.tavlo-hooks-link-btn {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--th-brand);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Segmented & Stepper */
+.tavlo-hooks-segmented {
+  display: inline-flex;
+  padding: 2px;
+  border: 1px solid var(--th-border);
+  border-radius: var(--th-radius-sm);
+  background: var(--th-bg);
+  gap: 2px;
+}
+
+.tavlo-hooks-seg-btn {
+  border: 0;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--th-muted);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.tavlo-hooks-seg-btn[data-active="true"] {
+  background: var(--th-brand-soft);
+  color: var(--th-brand);
+  font-weight: 600;
+}
+
+.tavlo-hooks-stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Inputs */
+.tavlo-hooks-field {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+
+.tavlo-hooks-field.is-full {
+  grid-column: 1 / -1;
+}
+
+.tavlo-hooks-field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 12px;
+}
+
+.tavlo-hooks-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 550;
+  color: var(--th-ink);
+}
+
+.tavlo-hooks-req {
+  color: var(--th-error);
+}
+
+.tavlo-hooks-secret-preview {
+  margin-left: auto;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 11px;
+  color: var(--th-subtle);
+}
+
+.tavlo-hooks-input,
+.tavlo-hooks-select,
+.tavlo-hooks-textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 6px 9px;
+  border: 1px solid var(--th-border-strong);
+  border-radius: var(--th-radius-sm);
+  background: var(--th-bg);
+  color: var(--th-ink);
+  font: inherit;
+  font-size: 12.5px;
+}
+
+.tavlo-hooks-input-sm {
+  width: 100px;
+}
+
+.tavlo-hooks-input-xs {
+  width: 64px;
+  text-align: center;
+}
+
+.tavlo-hooks-input-meta {
+  width: 170px;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.tavlo-hooks-textarea {
+  resize: vertical;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 12px;
+}
+
+.tavlo-hooks-secret-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tavlo-hooks-input:focus,
+.tavlo-hooks-select:focus,
+.tavlo-hooks-textarea:focus,
+.tavlo-hooks-btn:focus-visible,
+.tavlo-hooks-switch:focus-visible,
+.tavlo-hooks-bell-btn:focus-visible {
+  outline: 2px solid var(--th-brand);
+  outline-offset: 1px;
+}
+
+/* Sound meta & banners */
+.tavlo-hooks-sound-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tavlo-hooks-perm-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--th-muted);
+}
+
+.tavlo-hooks-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 11px;
+  border-radius: var(--th-radius-sm);
+  font-size: 12px;
+  line-height: 1.45;
+  border: 1px solid var(--th-border);
+}
+
+.tavlo-hooks-banner-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.tavlo-hooks-banner.is-warn {
+  background: var(--th-warn-soft);
+  border-color: color-mix(in srgb, var(--th-warn) 35%, transparent);
+  color: var(--th-warn);
+}
+
+.tavlo-hooks-banner.is-error {
+  background: var(--th-error-soft);
+  border-color: color-mix(in srgb, var(--th-error) 35%, transparent);
+  color: var(--th-error);
+}
+
+.tavlo-hooks-banner.is-success {
+  background: var(--th-success-soft);
+  border-color: color-mix(in srgb, var(--th-success) 35%, transparent);
+  color: var(--th-success);
+}
+
+.tavlo-hooks-banner.is-muted {
+  background: var(--th-bg-2);
+  color: var(--th-muted);
+}
+
+.tavlo-hooks-inline-result {
+  padding: 7px 10px;
+  border-radius: var(--th-radius-sm);
+  font-size: 12px;
+}
+
+.tavlo-hooks-inline-result.is-success {
+  background: var(--th-success-soft);
+  color: var(--th-success);
+}
+
+.tavlo-hooks-inline-result.is-error {
+  background: var(--th-error-soft);
+  color: var(--th-error);
+}
+
+.tavlo-hooks-loading-card,
+.tavlo-hooks-empty-box {
+  padding: 16px;
+  border: 1px dashed var(--th-border-strong);
+  border-radius: var(--th-radius-md);
+  color: var(--th-muted);
+  font-size: 12.5px;
+  text-align: center;
+}
+
+/* Third-party section */
+.tavlo-hooks-thirdparty {
+  display: grid;
+  gap: 12px;
+}
+
+.tavlo-hooks-sub-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.tavlo-hooks-sub-title-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+}
+
+.tavlo-hooks-sub-title {
+  font-size: 14px;
+  font-weight: 650;
+  color: var(--th-ink);
+}
+
+.tavlo-hooks-add-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tavlo-hooks-add-select-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 200px;
+  max-width: 300px;
+}
+
+.tavlo-hooks-platform-glyph {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  flex: none;
+  user-select: none;
+}
+
+.tavlo-hooks-target-list {
+  display: grid;
+  gap: 8px;
+}
+
+.tavlo-hooks-target-card {
+  border: 1px solid var(--th-border);
+  border-radius: var(--th-radius-md);
+  background: var(--th-bg-2);
+  overflow: hidden;
+}
+
+.tavlo-hooks-target-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  flex-wrap: wrap;
+}
+
+.tavlo-hooks-target-main {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  flex: 1 1 240px;
+}
+
+.tavlo-hooks-target-title-wrap {
+  min-width: 0;
+}
+
+.tavlo-hooks-target-title-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tavlo-hooks-target-name {
+  font-weight: 600;
+  color: var(--th-ink);
+}
+
+.tavlo-hooks-target-events-summary {
+  font-size: 11.5px;
+  color: var(--th-muted);
+  margin-top: 2px;
+}
+
+.tavlo-hooks-target-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: none;
+}
+
+.tavlo-hooks-target-body {
+  display: grid;
+  gap: 12px;
+  padding: 12px;
+  border-top: 1px solid var(--th-border);
+  background: var(--th-bg);
+}
+
+.tavlo-hooks-events-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tavlo-hooks-check-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 9px;
+  border: 1px solid var(--th-border);
+  border-radius: 999px;
+  background: var(--th-bg-2);
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tavlo-hooks-check-pill[data-checked="true"] {
+  border-color: var(--th-brand);
+  background: var(--th-brand-soft);
+  color: var(--th-brand);
+  font-weight: 550;
+}
+
+.tavlo-hooks-check-pill input {
+  margin: 0;
+  accent-color: var(--th-brand);
+}
+
+.tavlo-hooks-target-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* Mount points */
+.tavlo-hooks-group {
+  display: grid;
+  gap: 10px;
+}
+
+.tavlo-hooks-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 6px 8px;
+  border: 0;
+  border-radius: var(--th-radius-sm);
+  background: var(--th-bg-2);
+  color: var(--th-ink);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tavlo-hooks-group-header:hover {
+  background: var(--th-bg-3);
+}
+
+.tavlo-hooks-group-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tavlo-hooks-mount-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 10px;
+}
+
+.tavlo-hooks-mount-card {
+  display: grid;
+  align-content: space-between;
+  gap: 8px;
+  padding: 11px 12px;
+  border: 1px solid var(--th-border);
+  border-radius: var(--th-radius-md);
+  background: var(--th-bg-2);
+  cursor: pointer;
+  transition: border-color 140ms ease, background-color 140ms ease;
+}
+
+.tavlo-hooks-mount-card:hover {
+  border-color: var(--th-border-strong);
+}
+
+.tavlo-hooks-mount-card[data-selected="true"] {
+  border-color: var(--th-brand);
+  background: var(--th-brand-soft);
+}
+
+.tavlo-hooks-mount-card[data-enabled="false"] {
+  opacity: 0.78;
+}
+
+.tavlo-hooks-mount-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.tavlo-hooks-mount-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.tavlo-hooks-mount-name {
+  font-weight: 650;
+  font-size: 13px;
+  color: var(--th-ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tavlo-hooks-mount-event-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tavlo-hooks-mount-desc {
+  font-size: 11.5px;
+  color: var(--th-muted);
+  line-height: 1.45;
+}
+
+.tavlo-hooks-mount-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 4px;
+  border-top: 1px solid var(--th-border);
+}
+
+.tavlo-hooks-mount-counts {
+  font-size: 11.5px;
+  color: var(--th-muted);
+}
+
+.tavlo-hooks-mount-tools {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tavlo-hooks-bell-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  border: 1px solid var(--th-border);
+  background: var(--th-bg);
+  cursor: pointer;
+}
+
+.tavlo-hooks-bell-btn.is-on {
+  color: var(--th-brand);
+  border-color: color-mix(in srgb, var(--th-brand) 45%, transparent);
+  background: var(--th-brand-soft);
+}
+
+.tavlo-hooks-bell-btn.is-off {
+  color: var(--th-subtle);
+}
+
+/* Mount drawer */
+.tavlo-hooks-drawer {
+  display: grid;
+  gap: 12px;
+  padding: 13px;
+  border: 1px solid var(--th-brand);
+  border-radius: var(--th-radius-md);
+  background: var(--th-bg);
+}
+
+.tavlo-hooks-drawer-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tavlo-hooks-drawer-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.tavlo-hooks-dsh-events {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 5px;
+}
+
+.tavlo-hooks-drawer-head-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tavlo-hooks-script-list {
+  display: grid;
+  gap: 8px;
+}
+
+.tavlo-hooks-script-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 11px;
+  border: 1px solid var(--th-border);
+  border-radius: var(--th-radius-sm);
+  background: var(--th-bg-2);
+  flex-wrap: wrap;
+}
+
+.tavlo-hooks-script-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 260px;
+  min-width: 0;
+}
+
+.tavlo-hooks-script-info {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.tavlo-hooks-script-name-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tavlo-hooks-script-name {
+  font-weight: 600;
+}
+
+.tavlo-hooks-script-meta-inputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tavlo-hooks-inline-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  color: var(--th-muted);
+}
+
+.tavlo-hooks-script-actions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.tavlo-hooks-output-pre {
+  margin: 6px 0 0;
+  padding: 7px 9px;
+  border-radius: 6px;
+  background: var(--th-bg-3);
+  color: var(--th-ink);
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 11px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 160px;
+  overflow: auto;
+}
+
+.tavlo-hooks-output-pre.is-stderr {
+  color: var(--th-error);
+}
+
+/* Logs panel */
+.tavlo-hooks-logs-panel {
+  display: grid;
+  gap: 10px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--th-border);
+  background: var(--th-bg-2);
+}
+
+.tavlo-hooks-logs-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.tavlo-hooks-logs-list {
+  display: grid;
+  gap: 6px;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.tavlo-hooks-log-item {
+  padding: 8px 10px;
+  border: 1px solid var(--th-border);
+  border-radius: var(--th-radius-sm);
+  background: var(--th-bg);
+}
+
+.tavlo-hooks-log-top {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.tavlo-hooks-log-time {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 11px;
+  color: var(--th-subtle);
+}
+
+.tavlo-hooks-log-script {
+  font-weight: 600;
+}
+
+/* Source modal */
+.tavlo-hooks-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: var(--dsw-alias-bg-mask-1, rgba(0, 0, 0, 0.45));
+  backdrop-filter: blur(2px);
+}
+
+.tavlo-hooks-modal {
+  width: min(740px, 100%);
+  max-height: 82vh;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  border: 1px solid var(--dsw-alias-border-l2, #cbd5e1);
+  border-radius: var(--dsw-radius-lg, 14px);
+  background: var(--dsw-alias-bg-layer-1, light-dark(#ffffff, #1e222a));
+  color: var(--dsw-alias-label-primary, light-dark(#152032, #eef2f8));
+  box-shadow: var(--dsw-shadow-lv3, 0 18px 46px rgba(0, 0, 0, 0.28));
+  overflow: hidden;
+}
+
+.tavlo-hooks-modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--dsw-alias-border-l2, #e2e8f0);
+}
+
+.tavlo-hooks-modal-head h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.tavlo-hooks-source-pre {
+  margin: 0;
+  padding: 14px 16px;
+  overflow: auto;
+  background: var(--dsw-alias-bg-layer-2, light-dark(#f8fafc, #14171d));
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.55;
+  white-space: pre;
+}
+
+/* Bottom-right In-App Toast Overlay */
+.tavlo-hooks-toast-stack {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1150;
+  display: grid;
+  gap: 10px;
+  width: min(360px, calc(100vw - 24px));
+  pointer-events: none;
+}
+
+.tavlo-hooks-toast-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 4px minmax(0, 1fr);
+  border: 1px solid var(--dsw-alias-border-l2, light-dark(#dde4ee, #384150));
+  border-radius: var(--dsw-radius-md, 12px);
+  background: var(--dsw-alias-bg-layer-1, light-dark(#ffffff, #20242d));
+  color: var(--dsw-alias-label-primary, light-dark(#152032, #f1f5f9));
+  box-shadow: var(--dsw-shadow-lv2, 0 10px 28px rgba(0, 0, 0, 0.18));
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+.tavlo-hooks-toast-accent {
+  background: var(--dsw-alias-brand-primary, #3b82f6);
+}
+
+.tavlo-hooks-toast-card[data-variant="approval"] .tavlo-hooks-toast-accent {
+  background: #f59e0b;
+}
+
+.tavlo-hooks-toast-card[data-variant="attention"] .tavlo-hooks-toast-accent {
+  background: #3b82f6;
+}
+
+.tavlo-hooks-toast-card[data-variant="success"] .tavlo-hooks-toast-accent {
+  background: #10b981;
+}
+
+.tavlo-hooks-toast-card[data-variant="error"] .tavlo-hooks-toast-accent {
+  background: #ef4444;
+}
+
+.tavlo-hooks-toast-body {
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+  min-width: 0;
+}
+
+.tavlo-hooks-toast-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.tavlo-hooks-toast-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--dsw-alias-label-secondary, light-dark(#526277, #9fb0c7));
+}
+
+.tavlo-hooks-toast-point {
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--dsw-alias-bg-layer-2, light-dark(#f1f5f9, #2c313d));
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 10.5px;
+}
+
+.tavlo-hooks-toast-title {
+  font-size: 13.5px;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.tavlo-hooks-toast-source {
+  font-size: 11.5px;
+  color: var(--dsw-alias-label-secondary, light-dark(#526277, #9fb0c7));
+}
+
+.tavlo-hooks-toast-summary {
+  font-size: 12.5px;
+  color: var(--dsw-alias-label-secondary, light-dark(#3b4a5e, #cbd5e1));
+  word-break: break-word;
+}
+
+.tavlo-hooks-toast-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+@container tavlo-hooks (max-width: 520px) {
+  .tavlo-hooks-field-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .tavlo-hooks-mount-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .tavlo-hooks-field-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .tavlo-hooks-mount-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .tavlo-hooks-toast-stack {
+    right: 12px;
+    bottom: 12px;
+  }
+}

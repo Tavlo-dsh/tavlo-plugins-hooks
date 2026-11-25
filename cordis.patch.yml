@@ -1,0 +1,4 @@
+- insert:
+    - id: tavlo-hooks
+      name: '@tavlo-dsh/dsh-plugin-hooks'
+      config: {}
