@@ -16,7 +16,7 @@ npm test
 
 ```bash
 npm pack
-dsh plugin --profile web add --prod ./tavlo-dsh-dsh-plugin-hooks-0.1.2.tgz
+dsh plugin --profile web add --prod ./tavlo-dsh-dsh-plugin-hooks-0.1.3.tgz
 ```
 
 ## 核心能力

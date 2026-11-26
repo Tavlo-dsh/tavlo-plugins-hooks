@@ -1,6 +1,6 @@
 {
   "name": "@tavlo-dsh/dsh-plugin-hooks",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
@@ -8,6 +8,11 @@
   "description": "DSH Hook 通知与脚本扩展插件：支持全事件 Hook 挂载、应用内/系统/任务栏提醒、自定义 WAV 铃声、跨平台脚本与 11 种三方通知渠道",
   "license": "MIT",
   "author": "Tavlo-dsh",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tavlo-dsh/tavlo-plugins-hooks.git"
+  },
+  "homepage": "https://github.com/Tavlo-dsh/tavlo-plugins-hooks#readme",
   "type": "module",
   "main": "index.js",
   "icon": "./icon.svg",
